@@ -1,0 +1,27 @@
+@import "variables";
+
+.loader__wrapper{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+
+  & .loader__image {
+    width: 75px;
+    height: 75px;
+    border: 7.5px solid $dark-purple-color;
+    border-radius: 50%;
+    border-top-color: $purple-color;
+    animation: loader 2s linear infinite;
+  }
+
+  @keyframes loader {
+    50% {
+      transform: rotate(60deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
