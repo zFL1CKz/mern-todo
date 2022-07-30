@@ -9,6 +9,33 @@ class TodoController {
       next(e)
     }
   }
+
+  async addTodo(req, res, next){
+    try {
+      const todo = await todoService.addTodo(req)
+      return res.json(todo)
+    } catch (e) {
+      next(e)
+    }
+  }
+
+  async removeTodo(req, res, next){
+    try {
+      const todo = await todoService.removeTodo(req.params.id)
+      return res.json(todo)
+    } catch (e) {
+      next(e)
+    }
+  }
+
+  async updateTodo(req, res, next){
+    try {
+      const todo = await todoService.updateTodo(req)
+      return res.json(todo)
+    } catch (e) {
+      next(e)
+    }
+  }
 }
 
 module.exports = new TodoController()

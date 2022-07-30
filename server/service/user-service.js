@@ -73,6 +73,26 @@ class UserService {
 
     return {...tokens, user: userDto}
   }
+
+  async changePassword(req){
+    const {password, newPassword} = req.body
+    const isMatch = bcrypt.compare(password, newPassword)
+    if(!isMatch) {
+      throw ApiError.BadRequest('Пароли не совпадают')
+    }
+
+    const user = await UserModel.findByIdAndUpdate(req.params.id, {})
+
+    if(!user){
+      throw ApiError.BadRequest('Ошибка при изменении пароля')
+    }
+
+    const hashPassword = await bcrypt.hash(newPassword, 3)
+    user.password = hashPassword
+    await user.save()
+
+    return user
+  }
 }
 
 module.exports = new UserService()

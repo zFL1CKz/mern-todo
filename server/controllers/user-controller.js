@@ -20,7 +20,7 @@ class UserController {
 
   async login(req, res, next){
     try {
-      const {email, password} = req.body
+      const { email, password } = req.body
       const userData = await userService.login(email, password)
       res.cookie('refreshToken', userData.refreshToken, {maxAge: 30*24*60*60*1000, httpOnly: true})
       return res.json(userData)
@@ -56,6 +56,20 @@ class UserController {
       const userData = await userService.refresh(refreshToken)
       res.cookie('refreshToken', userData.refreshToken, {maxAge: 30*24*60*60*1000, httpOnly: true})
       return res.json(userData)
+    } catch (e){
+      next(e)
+    }
+  }
+
+  async changePassword(req, res, next){
+    try {
+      const errors = validationResult(req)
+      if(!errors.isEmpty()) {
+        return next(ApiError.BadRequest('Ошибка при валидации пароля', errors.array()))
+      }
+
+      const user = await userService.changePassword(req)
+      return res.json(user)
     } catch (e){
       next(e)
     }

@@ -25,5 +25,7 @@ client/yarn-error.log*
 /node_modules
 server/node_modules
 server/.env
+server/static
+
 .idea
 .env
