@@ -1,0 +1,26 @@
+{
+  "name": "mern-todo",
+  "version": "1.0.0",
+  "description": "MERN Todo Application",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js --prefix server",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zFL1CKz/mern-todo.git"
+  },
+  "keywords": [],
+  "author": "zFL1CKz <dimakukharev2002@yandex.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zFL1CKz/mern-todo/issues"
+  },
+  "homepage": "https://github.com/zFL1CKz/mern-todo#readme",
+  "devDependencies": {
+    "concurrently": "^7.3.0",
+    "nodemon": "^2.0.19"
+  }
+}
