@@ -1,12 +1,15 @@
 import React, {FC} from 'react'
-import Loader from './components/ui/Loader/Loader'
+import AppRouter from './components/logic/AppRouter'
 import './assets/styles/app.scss'
+import Page from './components/ui/Page/Page'
+import Navbar from './components/ui/Navbar/Navbar'
 
 const App: FC = () => {
   return (
-    <div>
-      <Loader/>
-    </div>
+    <Page>
+      <AppRouter/>
+      <Navbar/>
+    </Page>
   )
 }
 

@@ -1,0 +1,9 @@
+@import "src/assets/styles/variables";
+
+nav.nav{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: $dark-gray-color;
+  padding-top: 12px;
+}

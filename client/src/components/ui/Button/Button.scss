@@ -1,0 +1,33 @@
+@import './src/assets/styles/variables.scss';
+
+button.button{
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  padding: 16px 0;
+  line-height: 1;
+  width: 100%;
+  border-radius: $border-radius;
+  transition: all .2s linear;
+
+  &.primary{
+    color: $main-text-color;
+    background: $purple-color;
+
+    &:hover{
+      background: transparent;
+      color: $purple-color
+    }
+  }
+
+  &.secondary{
+    background: transparent;
+    color: $purple-color;
+
+    &:hover{
+      color: $dark-purple-color;
+    }
+  }
+
+}
