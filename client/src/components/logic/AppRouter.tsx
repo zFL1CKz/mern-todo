@@ -1,11 +1,9 @@
 import React, {FC} from 'react'
 import {Navigate, Route, Routes} from 'react-router-dom'
 import {privateRoutes, publicRoutes, RouteNamesEnum} from '../../routes/routes'
-import {useAppSelector} from '../../hooks/redux'
-import {selectCurrentToken} from '../../store/reducers/auth/authSlice'
 
 const AppRouter: FC = () => {
-  const isAuth = !!useAppSelector(selectCurrentToken)
+  const isAuth = true
   return (
     isAuth ?
     <>
