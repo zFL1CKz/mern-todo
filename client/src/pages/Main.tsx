@@ -4,7 +4,7 @@ const Main: FC = () => {
 
   return (
     <div>
-
+      MAIN PAGE
     </div>
   )
 }
