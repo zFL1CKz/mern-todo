@@ -1,10 +1,13 @@
 import React, {FC} from 'react'
+import {Link} from 'react-router-dom'
 
 const Main: FC = () => {
 
   return (
     <div>
-      MAIN PAGE
+      <Link to='/profile'>
+        Profile
+      </Link>
     </div>
   )
 }

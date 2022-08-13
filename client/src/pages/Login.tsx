@@ -2,8 +2,8 @@ import React, {ChangeEvent, FC, useState} from 'react'
 import {IAuthRequest} from '../models/IAuth'
 import {useAppDispatch} from '../hooks/redux'
 import {useNavigate} from 'react-router-dom'
-import {useLoginMutation} from '../services/api'
 import {setCredentials} from '../store/slices/authSlice'
+import {useLoginMutation} from '../services/authApi'
 
 const Login: FC = () => {
   const [formError, setFormError] = useState<string>('')
@@ -29,6 +29,7 @@ const Login: FC = () => {
       }))
       navigate('/')
     } catch (e: any) {
+      console.log(e)
       setFormError(e.data.message)
     }
   }
